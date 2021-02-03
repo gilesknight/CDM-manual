@@ -6,6 +6,6 @@
 
 <!-- badges: end -->
 
-The goal of CDM-manual is to provide an easily editable "living manual" that describes the Coorong Dynamics Model's (CDM) set-up and results.
+The goal of CDM-manual is to provide an easily editable "living manual" that describes the  set-up and results of the Coorong Dynamics Model (CDM).
 
 ## Contributing
