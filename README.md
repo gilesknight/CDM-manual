@@ -38,4 +38,8 @@ Open the R project file `CDM-manual.Rpoj` and navigate to the `.Rmd` file that c
 
 #### 4. Create a new chapter
 
-Open the R project file `CDM-manual.Rpoj` and create a new blank `.Rmd` file. Add contents and save the file as the chapter name written in 'snake case' (e.g. 'Lagoon Water Quality' becomes `lagoon_water_quality.Rmd`). Navigate to `_bookdown.yml` and add the chapter `.Rmd` file to the `rmd_files` list. Save and re-build the book.
+Open the R project file `CDM-manual.Rpoj` and create a new blank `.Rmd` file. Write it's contents and save the file as the chapter name written in 'snake case' (e.g. 'Lagoon Water Quality' becomes `lagoon_water_quality.Rmd`). Navigate to `_bookdown.yml` and add the chapter `.Rmd` file to the `rmd_files` list. Save and re-build the book.
+
+#### 5. Push the changes
+
+Using GitHub Desktop or your terminal, push the changes back to the CDM-manual repository. Updates to the main branch will automatically trigger a re-build of the website.
