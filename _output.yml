@@ -4,7 +4,7 @@ bookdown::gitbook:
     toc:
       collapse: section
       before: |
-        <li><a href="./"><b>Coorong Dynamics Modelk</b></a></li>
+        <li><a href="./"><b>Coorong Dynamics Model</b></a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
     download: []
