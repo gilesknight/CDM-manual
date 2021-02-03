@@ -7,7 +7,7 @@ documentclass: book
 bibliography:  ["references/references.bib"]
 biblio-style: apalike
 link-citations: yes
-description: "The online Peel book"
+description: "A manual for the Coorong Dynamics Model (CDM)"
 ---
 
 ```{r, include=FALSE}
