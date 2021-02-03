@@ -1,7 +1,7 @@
 --- 
 title: "Coorong Dynamics Model"
 author: "Author 1, Author 2, Author 3 etc"
-date: "`r format(Sys.time(), 'the %dth of %B, %Y')`"
+date: "`r format(Sys.time(), 'the %d-%B-%Y')`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography:  ["references/references.bib"]
@@ -20,5 +20,5 @@ knitr::knit_hooks$set(class = function(before, options, envir) {
 })
 ```
 
-# Introduction {-}
+# Welcome {-}
 
