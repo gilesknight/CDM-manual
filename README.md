@@ -32,7 +32,7 @@ git clone https://github.com/gilesnknight/CDM-manual.git
 
 #### 3. Edit a chapter
 
-Open the R project file `CDM-manual.Rpoj` and navigate to the `.Rmd` file that corresponds with the desired chapter you wish to edit. Once edits have been made use click 'Build Book' button in RStudio's 'Build' tab to recompile (alternatively use the shortcut <kbd>Shift</kbd> + <kbd>Ctrl</kbd> + <kbd>B</kbd> or <kbd>Shift</kbd> + <kbd>\#8984</kbd> + <kbd>B</kbd>).
+Open the R project file `CDM-manual.Rpoj` and navigate to the `.Rmd` file that corresponds with the desired chapter you wish to edit. Once edits have been made use click 'Build Book' button in RStudio's 'Build' tab to recompile (alternatively use the shortcut <kbd>⇧</kbd> + <kbd>Ctrl</kbd> + <kbd>B</kbd> or <kbd>⇧</kbd> + <kbd>⌘</kbd> + <kbd>B</kbd>).
 
 #### 4. Create a new chapter
 
