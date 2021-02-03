@@ -1,1 +1,0 @@
-# CDM-manual

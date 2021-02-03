@@ -1,0 +1,6 @@
+book_filename: Coorong Dynamics Model
+output_dir: docs
+delete_merged_file: true
+rmd_files: ["index.Rmd",
+            "references.Rmd"]
+new_session: no

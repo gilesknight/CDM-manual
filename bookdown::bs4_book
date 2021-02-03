@@ -1,0 +1,13 @@
+  |                                                                              |                                                                      |   0%  |                                                                              |.......................                                               |  33%
+   inline R code fragments
+
+  |                                                                              |...............................................                       |  67%
+label: unnamed-chunk-1 (with options) 
+List of 1
+ $ include: logi FALSE
+
+  |                                                                              |......................................................................| 100%
+   inline R code fragments
+
+
+/Applications/RStudio.app/Contents/MacOS/pandoc/pandoc +RTS -K512m -RTS Coorong-Dynamics-Model.utf8.md --to html4 --from markdown+autolink_bare_uris+tex_math_single_backslash --output Coorong-Dynamics-Model.html --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/bookdown/rmarkdown/lua/custom-environment.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/lua/pagebreak.lua --lua-filter /Library/Frameworks/R.framework/Versions/4.0/Resources/library/rmarkdown/rmarkdown/lua/latex-div.lua --metadata-file /var/folders/vw/_1v79vqd6lb7lt321m7q23hw0000gn/T//RtmpJmx3lw/file6b974ddb0418 --wrap preserve --standalone --section-divs --template /Library/Frameworks/R.framework/Versions/4.0/Resources/library/bookdown/templates/bs4_book.html --highlight-style pygments --number-sections --css css/style.css --include-in-header /var/folders/vw/_1v79vqd6lb7lt321m7q23hw0000gn/T//RtmpJmx3lw/rmarkdown-str6b974d6293ac.html --mathjax --citeproc 

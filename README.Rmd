@@ -1,0 +1,27 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# CDM-manual
+
+
+<!-- badges: start -->
+
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()
+<!-- badges: end -->
+
+The goal of CDM-manual is to provide an easily editable "living manual" that describes the Coorong Dynamics Model's (CDM) setup and results.
+
+## Contributing
