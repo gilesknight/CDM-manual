@@ -1,3 +1,8 @@
+eq:lagoonhabitat1
+eq:lagoonhabitat2
+eq:lagoonhabitat3
+eq:lagoonhabitat4
+eq:lagoonhabitat5
 introduction
 importance-of-the-coorong
 ecological-character-description
@@ -25,7 +30,12 @@ validation-1
 lagoon-habitat
 overview-2
 aed-overview-1
+hydrodynamics
+suspended-solids-and-light
+nutrients-and-filamentous-algae
+parameter-summary
 module-configuration-ruppia
+model-setup-and-configuration
 module-configuration-fish
 module-configuration-birds
 validation-and-assessment
