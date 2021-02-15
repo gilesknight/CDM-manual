@@ -2,11 +2,17 @@
 
 ## Overview
 
-Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health and preventing extreme hyper-salinity (Brookes et al. 2009). *Ruppia tuberosa* is an important macrophyte in the Coorong that provides habitat for fish and food for herbivorous birds (Phillips and Muller 2006), and it can tolerate a salinity higher than natural seawater. It therefore is known to concentrate in the mid to southern regions (Figure X).  
+Whilst the Coorong is a naturally saline to hyper-saline lagoon, freshwater flows are important in maintaining estuarine habitat and ecosystem health and preventing extreme hyper-salinity (Brookes et al. 2009). *Ruppia tuberosa* is an important macrophyte in the Coorong that provides habitat for fish and food for herbivorous birds (Phillips and Muller 2006), and it can tolerate a salinity higher than natural seawater. It therefore is known to concentrate in the mid to southern regions (Figure \@ref(fig:lagoonhabitat-pic1)).  
 
 The germination and growth of *R. tuberosa* is known to be governed in large part by changes in salinity and water level regimes, which are influenced by flows through the barrages (Kim et al. 2013). Other factors that influence *R. tuberosa* growth include nutrient availability, water temperature, sediment quality and interactions with algae, including shading of light and interference with flowers and fruits on the surface. Early summer flows are thought to be particularly beneficial as they delay the drop in water level in the South Lagoon and can prevent extreme salinities emerging, thereby encouraging a more complete reproductive cycle (Collier et al. 2017).
 
 In addition, salinity has also been identified as the key driver that influences fish assemblage structure and the extent of estuarine fish habitat in the Coorong (Ye et al. 2011). This section describes how simulations of *Ruppia and* estuarine fish habitat have been configured and assessed.
+
+```{r lagoonhabitat-pic1, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Conceptual diagram of Ruppia presence in the Coorong, under base case conditions=  with moderate inflows from the Barrages (North) and Salt Creek (South-east)."}
+
+knitr::include_graphics("images/lagoon_habitat/picture1.png")
+
+```
 
 ## AED overview
 
@@ -67,6 +73,11 @@ $$
 (\#eq:lagoonhabitat5)
 $$
 
+$$
+\scriptsize{f^{FA}_{\text{uptake}} = \underbrace{R^{FA}_{\text{growth}}}_{\text{max growth} \\ \text{rate at 20$^\circ$C}} \ \ \underbrace{(1-k^{FA}_{\text{pr}})}_{\text{photorespiratory} \\ \text{loss}} \ \ \underbrace{\Phi^{FA}_{\text{tem}}(T)}_{\text{temperature} \\ \text{scaling}} \text{min} \left \{\underbrace{\Phi^{FA}_{\text{light}}(I)}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{N}}(NO_{3},NH_{4})}_{\text{light limitation}}, \underbrace{\Phi^{FA}_{\text{P}}(PO_{4})}_{\text{P limitation}} \right \} [FA]}
+(\#eq:lagoonhabitat6)
+$$
+
 Note that the 'sloughed' biomass is considered to be exposed to surface light irradiances and can also decompose should environmental conditions be inadequate for growth.
 
 ### Parameter Summary
@@ -81,7 +92,69 @@ The approach adopted in the current study is to simulate "habitat suitability" b
 
 For the Coorong, a similar habitat model approach was undertaken previously by Ye et al. (2014), who focused exclusively on the salinity and water level requirements of Ruppia and presented the model results as an overall probability that Ruppia plants would successfully complete their lifecycle, by accounting for the different tolerances of different life stages. 
 
-In this study, we used the hydrodynamic-biogeochemical model to predict environmental conditions at high spatial and temporal resolution for a period of multiple years, and used this to calculate the habitat suitability index (HSI) for each particular phase of the life cycle of Ruppia (Figure 4). The calculation of the HSI required the integration of environmental conditions over a biologically relevant time period, based on the typical duration and seasonal timing for each life-stage. HSI results for different life stages were then combined and integrated to obtain overall HSI results for successful completion of sexual or asexual life cycles of Ruppia. For each annual cycle these model results were then summarised over the length of the Coorong, to allow estimation of the total suitable area.
+In this study, we used the hydrodynamic-biogeochemical model to predict environmental conditions at high spatial and temporal resolution for a period of multiple years, and used this to calculate the habitat suitability index (HSI) for each particular phase of the life cycle of Ruppia (Figure \@ref(fig:lagoonhabitat-pic2)). The calculation of the HSI required the integration of environmental conditions over a biologically relevant time period, based on the typical duration and seasonal timing for each life-stage. HSI results for different life stages were then combined and integrated to obtain overall HSI results for successful completion of sexual or asexual life cycles of Ruppia. For each annual cycle these model results were then summarised over the length of the Coorong, to allow estimation of the total suitable area.
+
+```{r lagoonhabitat-pic2, echo = FALSE, out.width='75%', class = "text-image", fig.cap = "Overview of the sexual and vegetative life cycles of *Ruppia tuberosa*."}
+
+knitr::include_graphics("images/lagoon_habitat/picture2.png")
+
+```
+
+```{r lagoonhabitat-pic3, echo = FALSE, out.width='100%', class = "text-image", fig.cap = "Conceptual diagram of the base case scenario (2015), with moderate inflows from the Barrages (North) and Salt Creek (South-east)."}
+
+knitr::include_graphics("images/lagoon_habitat/picture3.png")
+
+```
+
+#### Ruppia Habitat Suitability Index calculation
+
+In each model cell ($c$), the Habitat Suitability Index (HSI) is computed based on suitability of conditions ($i$), for each of the main life-stages ($j$), by defining a fractional index, . The fractional index for each attribute is computed at each time, step and then integrated over a 90-day window, specific to the life-cycle stage.
+
+$$
+\Phi^{HSI_{j}}_{i} = \frac{1}{t_{j_{\text{start}}}-t_{j_{\text{end}}}} \sum^{t_{j_{\text{end}}}}_{t=t_{j_{\text{start}}}}\Phi^{HSI_{j}}_{i}(i)_{t}
+(\#eq:lagoonhabitat7)
+\\
+\scriptsize{
+\\ \text{whereby: $i$ = {salinity, temperature, light, depth, algae}}
+\\ \text{and: $j$ = {seed, sprout, adult, flower, turion}}}
+$$
+
+The integration time for each life-stage, $j$, is set to be 90-days based on assessment of literature on the typical impact times reported following shading or disturbance. The optimum 90-day period is selected from within the available plant growth windows, as indicated in Table 2.
+
+The above function is computed in each cell and produces maps of suitability (between 0 and 1) for each environmental attribute for each life stage within any given year. The individual functions are piecewise, based on synthesis of the available literature (Table 3). These are then overlaid to produce a final map for any given year using:
+
+$$
+\Phi^{HSI}_{c} = \text{min}\left[\Phi^{HSI_{j}}_{c} \right]_{c}
+(\#eq:lagoonhabitat8)
+$$
+
+To compare the overall area of suitable habitat between years, or the relative suitability of alternate scenarios, the fractional suitability is used as a multiplier with the cell area, according to:
+
+$$
+A^{\text{HSI}} = \sum_{c} \Phi^{HSI}_{c} A_{c}
+(\#eq:lagoonhabitat9)
+$$
+
+and the spatially averaged HSI in any given region (with area A) is computed as:
+
+$$
+\overline{\text{HSI}} = \frac{1}{A}\sum_{c} \Phi^{HSI}_{c} A_{c}
+(\#eq:lagoonhabitat10)
+$$
+                
+| Stage, $j$                         | Seed germination| Turion sprouting | Adult growth  | Flowering  | Turion production  |
+|------------------------------------|-----------------|------------------|---------------|------------|--------------------|
+| Start date, $t_{j_{\text{start}}}$ | *Apr*           | *Apr*            | *Jun*         | *Aug*      | *Aug*              |
+| End date, $t_{j_{\text{end}}}$     | *Jun*           | *Jun*            | *Aug*         | *Oct*      | *Oct*              |
+
+: Life cycle time windows over which environmental suitability is assessed. {\#tbl:table1}
+
+#### Model outputs and assessment
+
+The *Ruppia* ecological response model predicts habitat suitability of critical life stages (Figure 7), in response to light, depth, salinity and temperature, which in the end results in a combined probability of sexual or asexual life-cycle completion (FIGURE 8 and 9). The requirements for each life stage are quite different, and when each is superimposed together, the areas where life-cycle completion are limited to the margins of the main lagoons, and the shallow areas around Parnka. From year to year, the area of good habitat changes, depending on that years eco-hydrodynamic regime (Figure 10).
+
+By comparing scenarios with different flows into the Lagoon, we can see that there is an expansion of good habitat in the north of the South Lagoon, and along the South Lagoon margins, when extreme salinity values are avoided (Figure 11).
+
 
 ## Module configuration: Fish
 
