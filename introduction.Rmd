@@ -4,6 +4,10 @@ This is the introduction.
 
 Changes made on github.
 
+```{r}
+knitr::include_graphics("images/image.png")
+```
+
 ## Importance of the Coorong 
 
 ## Ecological Character Description 
